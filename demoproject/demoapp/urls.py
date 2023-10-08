@@ -11,6 +11,8 @@ urlpatterns = [
     re_path(r'^menu_item/([0-9]{2})/$' , views.menu_item_view, name='menu_item_view'),
     path('index/', views.index, name='index'),
     path('hello/<str:name>/', views.hello, name='hello'),
-    path('about/', views.about, name='about')
+    path('about/', views.about, name='about'),
+    path('person/', views.person, name='person'),
+    path('myview/', views.myview, name='myview')
 
 ]

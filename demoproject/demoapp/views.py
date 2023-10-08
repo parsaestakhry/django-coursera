@@ -42,7 +42,8 @@ def menu_item_view(request, id):
     return HttpResponse('Menu_item_number:{}'.format(id))
 
 def index(request):
-    return HttpResponse('<h1>Hello, World!</h1>')
+    context = {'user' : "admin"}
+    return render(request, 'index.html', context)
 
 def hello(request, name):
     context = {"name" : name}
@@ -51,3 +52,14 @@ def hello(request, name):
 def about(request):
     about_content = {'about' : "this is little lemon" }
     return render(request, 'about.html', about_content)
+
+
+def person(request):
+    person={'name':'Roger', 'profession':'Teacher'}
+    return render(request,'person.html', person)
+
+def myview(request):
+    langs = ['Python', 'Java', 'PHP', 'Ruby', 'Rust']
+    return render(request, 'langs.html', {'langs' : langs})
+    
+

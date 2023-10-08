@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h2>about</h2>
-    <p style="background-color: blue;"> {{about}} </p>
+    {% if user == "admin" %}
+    <h1>Welcome {{user}} </h1>
+    {% else %}
+    <h2>you don't have admin access</h2>
+    {% endif %}
 </body>
 </html>
