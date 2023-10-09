@@ -3,11 +3,13 @@ from django.http import HttpResponse
 from django.template import loader
 # Create your views here.
 
-
+'''
 def home(request):
     path = request.path
     response = HttpResponse('this works!')
     return response
+'''
+
 
 
 def pathview(request, name, id):
@@ -61,5 +63,15 @@ def person(request):
 def myview(request):
     langs = ['Python', 'Java', 'PHP', 'Ruby', 'Rust']
     return render(request, 'langs.html', {'langs' : langs})
-    
+
+def home(request):
+    return render(request, 'home.html', {})
+
+def register(request):
+    return render(request, 'register.html', {}) 
+
+
+def login(request):
+    return render(request, 'login.html', {})
+
 
