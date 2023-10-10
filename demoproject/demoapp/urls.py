@@ -1,5 +1,6 @@
 from django.urls import path,re_path
 from . import views
+from demoapp.views import NewView
 app_name = 'demoapp'
 
 urlpatterns = [
@@ -15,6 +16,7 @@ urlpatterns = [
     path('hello/<str:name>/', views.hello, name='hello'),
     path('about/', views.about, name='about'),
     path('person/', views.person, name='person'),
-    path('myview/', views.myview, name='myview')
+    path('myview/', views.myview, name='myview'),
+    path('newview/', NewView.as_view()),
 
 ]
